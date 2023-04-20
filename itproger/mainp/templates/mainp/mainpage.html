@@ -1,0 +1,22 @@
+{% extends 'mainp/layout.html' %}
+
+{% block title %}Main Page{% endblock title %}
+
+
+{% block content %}
+    <div class="features">
+        <h1>Welcome to Our Website!</h1>
+        <h2>{{ title }}</h2>
+        <a href="{% url 'about-us' %}">About Us -></a>
+        <p>This is the main page of our website.</p>
+        <button class="btn btn-warning">Button 1</button>
+        {% for value in values %}
+            {% if value == '123' %}
+                <p>{{ value }}</p>
+            {% endif %}
+        {% endfor %}
+        {% for key, value in obj.items %}
+            <p>{{ value }}</p>
+        {% endfor %}
+    </div>
+{% endblock content %}  
